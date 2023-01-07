@@ -1,0 +1,10 @@
+---
+title: "Mediterranean Water Security Index (Step 1)"
+author: "Silvia Krautzik"
+date: "2023-01-07"
+output: html_document
+---
+
+## R Markdown
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
