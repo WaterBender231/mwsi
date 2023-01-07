@@ -1,1 +1,41 @@
 
+#load required libraries
+library(COINr)
+library(readxl)
+
+#read in the data from a pre-prepared spreadsheet
+WS_iData <- read_excel("../Desktop/WS_Index_Lit/coin-dummy/data-table/WS_input_sheets.xlsx", sheet = "IndData")
+WS_iMeta <- read_excel("../Desktop/WS_Index_Lit/coin-dummy/data-table/WS_input_sheets.xlsx", sheet = "IndMeta")
+WS_aMeta <- read_excel("../Desktop/WS_Index_Lit/coin-dummy/data-table/WS_input_sheets.xlsx", sheet = "AggMeta")
+
+#view dataframes
+WS_iData
+WS_iMeta
+WS_aMeta
+
+#or alternatively
+head(WS_iData)
+
+#check if the Indicator Data Format is okay
+
+check_iData(WS_iData)
+check_iMeta(WS_iMeta)
+
+WS_iMeta$Level <- as.numeric(WS_iMeta$Level)
+WS_iMeta$Direction <- as.numeric(WS_iMeta$Direction)
+WS_iMeta$Weight <- as.numeric(WS_iMeta$Weight)
+
+
+
+# build a new coin
+WS_coin <- new_coin(iData = WS_iData,
+                    iMeta = WS_iMeta,
+                    level_names = c("Indicator", "Dimension", "Sub-index", "Index"))
+
+
+# plot framework
+plot_framework(WS_coin)
+
+
+plot_framework(WS_coin, type = "stack", colour_level = 2)
+
