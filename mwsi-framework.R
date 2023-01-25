@@ -7,7 +7,7 @@ library(readxl)
 WS_iData <- read_excel("C:/Users/skrautzi/Desktop/WS_Index_Lit/coin-dummy/data-table/WS_input_sheets.xlsx", sheet = "IndData")
 WS_iMeta <- read_excel("C:/Users/skrautzi/Desktop/WS_Index_Lit/coin-dummy/data-table/WS_input_sheets.xlsx", sheet = "IndMeta")
 WS_aMeta <- read_excel("C:/Users/skrautzi/Desktop/WS_Index_Lit/coin-dummy/data-table/WS_input_sheets.xlsx", sheet = "AggMeta")
-
+#change
 #view dataframes
 WS_iData
 WS_iMeta
